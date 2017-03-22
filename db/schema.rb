@@ -10,19 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321033845) do
+ActiveRecord::Schema.define(version: 20170322012324) do
 
-  create_table "notes", force: :cascade do |t|
-    t.text     "content"
+  create_table "food_items", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "meal_id"
+    t.integer  "serving_size"
+    t.integer  "num_servings"
+    t.integer  "calories",     default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.string   "meal_type"
     t.integer  "user_id"
-    t.integer  "workout_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_notes_on_user_id"
-    t.index ["workout_id"], name: "index_notes_on_workout_id"
   end
 
   create_table "users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "weight"
+    t.integer  "height_in_inches"
+    t.string   "gender"
+    t.integer  "age"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -35,20 +48,17 @@ ActiveRecord::Schema.define(version: 20170321033845) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.string   "name"
-    t.integer  "current_weight"
-    t.integer  "target_weight"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   create_table "workouts", force: :cascade do |t|
-    t.string   "title"
-    t.date     "date"
+    t.text     "content"
+    t.integer  "calories_burned"
     t.integer  "duration"
-    t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
