@@ -1,0 +1,9 @@
+<h3><%= link_to to_date(workout.created_at), workout_path(workout) %></h3>
+Workout: <%= workout.content %><br>
+Calories burned: <%= workout.calories_burned %><br>
+
+<br>
+
+<%= link_to 'Edit Workout', [:edit, workout] %> 
+<%= link_to 'Delete', workout_path(workout),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %>

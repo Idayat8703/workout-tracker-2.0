@@ -1,0 +1,19 @@
+<h3><%= meal.meal_type %> - <%= to_date(meal.created_at) %></h3>
+
+<ul>
+<% meal.food_items.each do |food| %>
+  <ul>
+    <li>Name: <%= food.name %></li><br>
+    <li>Serving Size: <%= food.serving_size %></li><br>
+    <li>Number of Servings: <%= food.num_servings %></li><br>
+    <li>Calories: <%= food.calories %></li><br>
+  </ul>
+<% end %>
+</ul>
+
+<div class="links">
+  <%= link_to 'View Meal', meal_path(meal) %>
+  <%= link_to 'Edit', [:edit, meal] %> 
+  <%= link_to 'Delete', meal_path(meal),
+              data: {:confirm => 'Are you sure?'}, :method => :delete %>
+</div>

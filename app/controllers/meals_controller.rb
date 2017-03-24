@@ -63,7 +63,13 @@ class MealsController < ApplicationController
       :serving_size,
       :num_servings,
       :calories,
+      :fat,
+      :cholesterol,
+      :sodium,
+      :carbs,
+      :protein
       ]
     )
   end
 end
+

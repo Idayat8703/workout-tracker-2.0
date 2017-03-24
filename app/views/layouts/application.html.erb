@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>WorkoutTracker20</title>
+    <title>Workout - Tracker 2.0</title>
     <%= csrf_meta_tags %>
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <div class="nav nav-tab">
+      <%= render 'layouts/header' %>
+    </div>
+    <br>
     <%= yield %>
+    <br>
+    <div  class= "container">
+      <img src="/images/wkt-logo1.gif" class="center-block" alt="Workout Tracker Logo" style="height:150px;">
+    </div>
+
   </body>
 </html>

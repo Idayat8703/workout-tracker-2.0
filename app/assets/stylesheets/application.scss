@@ -1,0 +1,110 @@
+
+
+ @import "bootstrap";
+ @import "font-awesome";
+ @import 'https://fonts.googleapis.com/css?family=Open+Sans:400|Roboto:300';
+
+.heading {
+  border-bottom: 1px solid;
+}
+
+.logo {
+  display: inline-flex;;
+  vertical-align: top;
+  padding: 20px 40px;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20px 25px;
+  overflow: hidden;
+  float: right;
+  display: inline-block
+;
+}
+
+.nav li {
+  float: left;
+}
+
+.nav li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #00AAAD;
+}
+
+.content {
+  margin: 50px 40px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0 10px ;
+  padding: 0;
+}
+
+.links {
+  list-style-type: none;
+  margin: 10px 20px;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  display: inline-block;
+}
+
+a {
+  color: black;
+  text-align: center;
+  padding: 0 20px 0 0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00AAAD;
+}
+
+.add a {
+  padding: 10px;
+  color: #00AAAD;
+}
+
+.add a:hover {
+  color: black;
+}
+
+.welcome {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.home ul {
+  margin-top: 50px;
+  display: block;
+  text-align: center
+}
+
+.home li {
+  display: inline-block;
+  padding: 0;
+  margin: 0 5px 0 5px;
+}
+
+.home a {
+  padding: 10px 20px 10px 20px;
+  border: 1px solid #6D6E71;
+}
+
+.img {
+    background-image: image(src="/images/wkt-logo1.gif" alt="Workout Tracker Logo" style="height:100px")
+}
+
+body {
+    background-color: lightyellow;
+}

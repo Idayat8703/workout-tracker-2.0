@@ -1,0 +1,8 @@
+<div class="content">
+  <h2>Your Workouts</h2>
+  <div class="add"><%= link_to "Add Workout", new_workout_path %></div>
+
+  <% @workouts.each do |workout| %>
+    <%= render :partial => 'workout', :locals => {workout: workout} %><br><br>
+  <% end %>
+</div>
