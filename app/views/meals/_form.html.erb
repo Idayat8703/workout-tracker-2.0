@@ -1,29 +1,30 @@
-<div class= "container container-table">
+
 
 <%= form_for @meal do |f| %>
-  <div class="field">
+  <form>
+  <div class="form-group ">
   <%= f.label :meal_type %>
   <%= f.text_field :meal_type %><br>
 </div>
   <br>
-  <div class="field">
+  <div class="form-group ">
   <%= f.fields_for :food_items do |food| %>
     <%= food.label "Food Name" %>
     <%= food.text_field :name %>
     </div>
     <br>
 
-    <div class="field">
+    <div class="form-group ">
     <%= food.label :serving_size %>
     <%= food.text_field :serving_size %>
   </div>
     <br>
-    <div class="field">
+    <div class="form-group ">
     <%= food.label :num_servings %>
     <%= food.text_field :num_servings %>
   </div>
     <br>
-    <div class="field">
+    <div class="form-group ">
     <%= food.label :calories %>
     <%= food.text_field :calories %>
   </div>

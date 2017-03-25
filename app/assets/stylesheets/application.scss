@@ -9,7 +9,7 @@
 }
 
 .logo {
-  display: inline-flex;;
+  display: inline-flex;
   vertical-align: top;
   padding: 20px 40px;
 }
@@ -101,10 +101,12 @@ a:hover {
   border: 1px solid #6D6E71;
 }
 
-.img {
-    background-image: image(src="/images/wkt-logo1.gif" alt="Workout Tracker Logo" style="height:100px")
-}
+
 
 body {
     background-color: lightyellow;
+}
+
+nav.nav{
+  background-color: lightblue;
 }
