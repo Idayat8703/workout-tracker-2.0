@@ -1,8 +1,11 @@
+require "pry"
 class UsersController < ApplicationController
   # renders the profile page for a user.
   def show
     @user = User.find(params[:id])
     @workouts = @user.workouts
+    binding.pry
+
   end
 
   # renders the form to update user information such as name, height, etc.
