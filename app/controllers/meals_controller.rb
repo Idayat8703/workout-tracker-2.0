@@ -26,6 +26,7 @@ class MealsController < ApplicationController
       redirect_to meal_path(@meal)
     else
       redirect_to controller: "meals", action: "new"
+      binding.pry
     end
   end
 
@@ -63,13 +64,8 @@ class MealsController < ApplicationController
       :serving_size,
       :num_servings,
       :calories,
-      :fat,
-      :cholesterol,
-      :sodium,
-      :carbs,
-      :protein
+
       ]
     )
   end
 end
-
