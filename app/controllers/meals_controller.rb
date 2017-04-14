@@ -26,12 +26,9 @@ class MealsController < ApplicationController
       redirect_to user_meal_path(current_user, @meal)
     else
       redirect_to controller: "meals", action: "new"
-      binding.pry
-    end
   end
 
-  # renders the form to adit a meal
-  def edit
+      renders the form to adit a meal
   end
 
   # updates the meal and nested food items
@@ -64,7 +61,6 @@ class MealsController < ApplicationController
       :serving_size,
       :num_servings,
       :calories,
-
       ]
     )
   end

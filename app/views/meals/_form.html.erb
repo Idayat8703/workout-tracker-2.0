@@ -1,4 +1,16 @@
 <%= form_for ([current_user, @meal])  do |f| %>
+<% if @meal.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(meal.errors.count, "error") %> prohibited this meal from being saved:</h2>
+
+    <ul>
+    <% meal.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <form>
   <div class="form-group ">
   <%= f.label :meal_type %>
@@ -6,7 +18,7 @@
 </div>
   <br>
   <div class="form-group ">
-  <%= f.fields_for :food_items do |food| %>
+  <%= f.fields_for :food_items_attributes do |food| %>
     <%= food.label "Food Name" %>
     <%= food.text_field :name %>
     </div>

@@ -1,10 +1,13 @@
-<h3><%= link_to to_date(workout.created_at), user_workout_path( current_user, workout) %></h3>
-Workout: <%= workout.content %><br>
-Calories burned: <%= workout.calories_burned %><br>
+<h3 class="container"><%= link_to to_date(workout.created_at), user_workout_path( current_user, workout) %></h3>
+<div class="container">
+  Workout: <%= workout.content %><br>
+  Calories burned: <%= workout.calories_burned %><br>
+</div>
+
 
 <br>
 
-<%= link_to 'Edit Workout', edit_user_workout_path(current_user, workout) %>
-<%= link_to 'Delete',user_workout_path(current_user, workout),
-            data: {:confirm => 'Are you sure?'}, :method => :delete %>
-<%= link_to 'Add Meal',  new_user_meal_path %>
+<strong> <%= link_to 'Edit Workout', edit_user_workout_path(current_user, workout) %> </strong>
+<strong><%= link_to 'Delete',user_workout_path(current_user, workout),
+            data: {:confirm => 'Are you sure?'}, :method => :delete %></strong>
+<strong><%= link_to 'Add Meal',  new_user_meal_path %></strong>
