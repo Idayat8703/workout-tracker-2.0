@@ -8,11 +8,12 @@ Rails.application.routes.draw do
   root 'static#home'
 
   # workouts
-  resources :workouts
+
 
   #users
-  resources :users
-
-  resources :meals
+  resources :users do
+    resources :workouts
+    resources :meals
+  end
 
 end

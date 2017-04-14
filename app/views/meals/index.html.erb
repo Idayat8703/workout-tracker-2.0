@@ -1,6 +1,6 @@
 <div class="content">
   <h2>Your Meals</h2>
-  <div class="add"><%= link_to "Add Meal", new_meal_path %></div>
+  <div class="add"><%= link_to "Add Meal", new_user_meal_path %></div>
 
   <% @meals.each do |meal| %>
     <%= render :partial => 'meal', :locals => {meal: meal} %><br><br>

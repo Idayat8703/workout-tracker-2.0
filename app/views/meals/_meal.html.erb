@@ -14,8 +14,9 @@
 </ul>
 
 <div class="links">
-  <%= link_to 'View Meal', meal_path(meal) %>
-  <%= link_to 'Edit', [:edit, meal] %>
-  <%= link_to 'Delete', meal_path(meal),
+
+  <%= link_to 'Edit', edit_user_meal_path(current_user, meal) %>
+  <%= link_to 'Delete',user_meal_path(current_user, meal),
               data: {:confirm => 'Are you sure?'}, :method => :delete %>
+  <%= link_to 'Add Workout', new_user_workout_path %>
 </div>

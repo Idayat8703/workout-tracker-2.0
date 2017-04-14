@@ -13,17 +13,18 @@ class WorkoutsController < ApplicationController
 
   # creates a new workout belonging to the current user
   def create
-    @workout = Workout.new(user_id: current_user.id)
-    @workout.update(workout_params)
-    if @workout.save
-      redirect_to workout_path(@workout)
-    else
-      redirect_to controller: "workouts", action: "new"
-    end
-  end
+     @workout = Workout.new(user_id: current_user.id)
+     @workout.update(workout_params)
+     if @workout.save
+       redirect_to user_workout_path(current_user, @workout)
+     else
+       render :new
+     end
+ end
 
   # shows the details of a specific workout
   def show
+
   end
 
   # renders a form to edit a specific workout
@@ -32,22 +33,21 @@ class WorkoutsController < ApplicationController
 
   # updates the workout
   def update
-    respond_to do |format|
-      if @workout.update(workout_params)
-        format.html { redirect_to @workout, notice: 'Workout was successfully updated.' }
-      else
+        if @workout.update(workout_params)
+          redirect_to user_workout_path(current_user, @workout), notice: 'Workout was successfully updated.'
+
+        else
         format.html { render :edit }
       end
-    end
   end
 
   # deletes the workout
   def destroy
-    @workout.destroy
-    respond_to do |format|
-      format.html { redirect_to user_path(current_user), notice: 'Workout was successfully deleted.' }
+      @workout.destroy
+      respond_to do |format|
+        format.html { redirect_to user_path(current_user), notice: 'Workout was successfully deleted.' }
+      end
     end
-  end
 
   private
 
