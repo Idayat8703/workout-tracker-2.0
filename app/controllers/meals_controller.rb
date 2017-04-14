@@ -26,9 +26,8 @@ class MealsController < ApplicationController
       redirect_to user_meal_path(current_user, @meal)
     else
       redirect_to controller: "meals", action: "new"
-  end
+    end
 
-      renders the form to adit a meal
   end
 
   # updates the meal and nested food items
@@ -44,7 +43,7 @@ class MealsController < ApplicationController
     def destroy
       @meal.destroy
       respond_to do |format|
-        format.html { redirect_to user_path(current_user), notice: 'Workout was successfully deleted.' }
+        format.html { redirect_to user_path(current_user), notice: 'Meal was successfully deleted.' }
       end
     end
 
