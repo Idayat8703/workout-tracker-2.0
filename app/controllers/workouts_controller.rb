@@ -16,6 +16,7 @@ class WorkoutsController < ApplicationController
      @workout = Workout.new(user_id: current_user.id)
      @workout.update(workout_params)
      if @workout.save
+       flash[:notice] = "Successfully created..."
        redirect_to user_workout_path(current_user, @workout)
      else
        render :new
@@ -34,20 +35,20 @@ class WorkoutsController < ApplicationController
   # updates the workout
   def update
         if @workout.update(workout_params)
-          redirect_to user_workout_path(current_user, @workout), notice: 'Workout was successfully updated.'
+          flash[:notice] = "Successfully created..."
+            redirect_to user_workout_path(current_user, @workout)
 
         else
-        format.html { render :edit }
+        render :edit 
       end
   end
 
   # deletes the workout
   def destroy
       @workout.destroy
-      respond_to do |format|
-        format.html { redirect_to user_path(current_user), notice: 'Workout was successfully deleted.' }
+      redirect_to user_path(current_user), notice: 'Workout was successfully deleted.'
       end
-    end
+
 
   private
 
