@@ -23,8 +23,10 @@ class MealsController < ApplicationController
     @meal = Meal.create(user_id: current_user.id)
     @meal.update(meal_params)
     if @meal.save
+        flash[:notice] = "Meal was successfully created"
       redirect_to user_meal_path(current_user, @meal)
     else
+      flash[:error] = "Please update complete the form"
       redirect_to controller: "meals", action: "new"
     end
 
@@ -33,8 +35,10 @@ class MealsController < ApplicationController
   # updates the meal and nested food items
   def update
     if @meal.update(meal_params)
+        flash[:notice] = "Workout Plan was successfully updated"
       redirect_to user_meal_path(current_user, @meal)
     else
+      flash[:error] = "Please update complete the form"
       redirect_to controller: "meals", action: "new"
     end
   end
@@ -42,9 +46,7 @@ class MealsController < ApplicationController
   # deletes a meal
     def destroy
       @meal.destroy
-      respond_to do |format|
-        format.html { redirect_to user_path(current_user), notice: 'Meal was successfully deleted.' }
-      end
+         redirect_to user_path(current_user), notice: 'Meal was successfully deleted.'
     end
 
   private

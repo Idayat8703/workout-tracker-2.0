@@ -10,12 +10,29 @@
   </head>
 
   <body>
-    <div class="nav-pills">
+      <div class="nav-pills">
       <%= render 'layouts/header' %>
     </div>
-    <br>
+      <br>
+      <br>
+      <% if flash.any? %>
+        <div class="flash-container">
+          <%= content_tag 'div', flash[:notice], class: "alert alert-success" if flash[:notice] %>
+          <%= content_tag 'div', flash[:error], class: "alert alert-danger" if flash[:error] %>
+        </div>
+      <% end %>
+    <!-- <div class="container">
+      <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
+
+        <% if flash[:error] %>
+            <div class="error"><%= flash[:error] %></div>
+        <% end %> -->
     <%= yield %>
+
     <br>
+
     <div  class= "center">
       <img src="/images/wkt-logo1.gif"   class="center-block" alt="Workout Tracker Logo" style="height:150px;">
 

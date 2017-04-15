@@ -16,10 +16,12 @@ class WorkoutsController < ApplicationController
      @workout = Workout.new(user_id: current_user.id)
      @workout.update(workout_params)
      if @workout.save
-       flash[:notice] = "Successfully created..."
+       flash[:notice] = "Workout Plan was successfully created"
        redirect_to user_workout_path(current_user, @workout)
      else
-       render :new
+       flash[:error] = "Please update complete the form"
+
+       redirect_to new_user_workout_path(current_user, @workout)
      end
  end
 
@@ -35,11 +37,12 @@ class WorkoutsController < ApplicationController
   # updates the workout
   def update
         if @workout.update(workout_params)
-          flash[:notice] = "Successfully created..."
+          flash[:notice] = "Workout Plan was successfully created"
             redirect_to user_workout_path(current_user, @workout)
 
         else
-        render :edit 
+          flash[:error] = "Please update complete the form"
+        redirect_to edit_user_workout_path(current_user, @workout)
       end
   end
 
