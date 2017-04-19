@@ -1,8 +1,13 @@
 <div class="content">
-  <h2>Your Workouts</h2>
-  
-  <div class="add"><%= link_to "Add Workout", new_user_workout_path %></div>
+  <h2>Your Status</h2>
+  <% @beginner_workout.each do |level| %>
+    <%= render :partial => 'workout', :locals => {workout: level} %><br><br>
+  <% end %>
 
+
+
+  <div class="add"><%= link_to "Add Workout", new_user_workout_path %></div>
+  <h2>Your Workouts</h2>
   <% @workouts.each do |workout| %>
     <%= render :partial => 'workout', :locals => {workout: workout} %><br><br>
   <% end %>
