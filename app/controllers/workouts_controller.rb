@@ -3,9 +3,9 @@ class WorkoutsController < ApplicationController
 
   # lists all of the current user's workouts
   def index
-    @workouts = current_user.workouts
-    @beginner_workout =current_user.workouts.beginner
-  end
+     @workouts = current_user.workouts
+     @beginner_workout =current_user.workouts.beginner
+   end
 
   # renders the form to create a new workout
   def new
