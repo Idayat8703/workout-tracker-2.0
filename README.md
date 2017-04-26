@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Workout-Tracker allows users to create workouts and meals and tracker everything about your fitness. Create an account (or sign in with Facebook) and get to cooking!
 
-Things you may want to cover:
+Built with Rails 5. Clone or download, bundle, run rails s to get started.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Questions, comments, and improvements welcome.
