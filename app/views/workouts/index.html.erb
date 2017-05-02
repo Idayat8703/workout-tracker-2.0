@@ -7,6 +7,7 @@
 
   <h2>Your Workouts</h2>
   <% @workouts.each do |workout| %>
+      Do I like this Workout? <%= workout.favorites %>
     <%= render :partial => 'workout', :locals => {workout: workout} %><br><br>
   <% end %>
 </div>

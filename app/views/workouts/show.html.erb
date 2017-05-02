@@ -1,6 +1,7 @@
 <div class="content">
   <h2>Workout</h2>
-  
+  Do I like this Workout? <%= @workout.favorites %>
+
   <%= render :partial => 'workout', :locals => {workout: @workout} %>
 
   <br>
